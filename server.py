@@ -66,7 +66,7 @@ def get_session(session_id):
     return jsonify(json.loads(path.read_text()))
 
 
-@app.route("/sessions/<session_id>", methods=["POST"])
+@app.route("/sessions/<session_id>", methods=["PUT"])
 def save_session(session_id):
     data = request.get_json()
     data["id"] = session_id

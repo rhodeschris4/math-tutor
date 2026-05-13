@@ -41,7 +41,7 @@ function setLoading(loading) {
 async function saveSession() {
   if (!history.length) return;
   await fetch(`/sessions/${sessionId}`, {
-    method: "POST",
+    method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ title: sessionTitle, messages: history }),
   });

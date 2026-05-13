@@ -2,3 +2,6 @@ sessions/
 __pycache__/
 .env
 .venv
+CLAUDE.md
+screenshots/
+extra/
