@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathMentor</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <span class="sidebar__logo">🦉</span>
+      <h1 class="sidebar__title">MathMentor</h1>
+    </div>
+    <button class="sidebar__new-session">+ New Session</button>
+    <div class="sidebar__sessions" id="session-list">
+      <p class="sidebar__sessions-label">Recent Sessions</p>
+    </div>
+  </aside>
+
+  <main class="chat">
+    <header class="chat__header">
+      <h2 class="chat__title">Tutoring Session</h2>
+      <p class="chat__subtitle">Ask a math question to get started</p>
+    </header>
+    <div class="chat__messages" id="messages"></div>
+    <div class="chat__quick-actions" id="quick-actions">
+      <button class="chat__pill" data-message="Can I get a small hint on what to try next?">💡 Hint</button>
+      <button class="chat__pill" data-message="Can you walk me through what the next step would look like, without giving away the answer?">👁 Show Step</button>
+      <button class="chat__pill" data-message="Can you explain that again in a different way?">🔄 Explain Again</button>
+    </div>
+    <form class="chat__input-bar" id="chat-form">
+      <input type="text" class="chat__input" id="chat-input" placeholder="Type your math question..." autocomplete="off">
+      <button type="submit" class="chat__send-btn">Send</button>
+    </form>
+  </main>
+
+  <aside class="workspace">
+    <div class="workspace__card">
+      <h3 class="workspace__card-title">Current Problem</h3>
+      <p class="workspace__problem" id="current-problem">$$2x + 5 = 15$$</p>
+    </div>
+
+    <div class="workspace__card">
+      <h3 class="workspace__card-title">Solution Steps</h3>
+      <ol class="workspace__steps">
+        <li class="workspace__step workspace__step--completed">
+          <span class="workspace__step-dot"></span>
+          Understand the Problem
+        </li>
+        <li class="workspace__step workspace__step--active">
+          <span class="workspace__step-dot"></span>
+          Work Through It
+        </li>
+        <li class="workspace__step">
+          <span class="workspace__step-dot"></span>
+          Verify the Answer
+        </li>
+      </ol>
+    </div>
+
+    <div class="workspace__card workspace__dropzone">
+      <p class="workspace__dropzone-text">Upload Your Work</p>
+      <p class="workspace__dropzone-hint">Drag an image here or click to upload</p>
+    </div>
+
+    <button class="workspace__read-aloud">🔊 Read Aloud</button>
+  </aside>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
