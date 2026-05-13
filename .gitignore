@@ -2,4 +2,3 @@ sessions/
 __pycache__/
 .env
 .venv
-CLAUDE.md
